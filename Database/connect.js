@@ -2,11 +2,10 @@ const mongoose=require("mongoose")
 
 const connectDatabase=async ()=>{
   try {
-    await mongoose.connect(process.env.MONGODB_URLC)
-    console.log("dbconnected")
+    mongoose.connect('mongodb://127.0.0.1:27017/ProductDb')
+    .then(() => console.log('Connected!'));
   } catch (error) {
     console.log(error)
-    
   }
 }
 module.exports=connectDatabase
