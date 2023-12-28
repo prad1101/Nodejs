@@ -10,21 +10,7 @@ app.use(bodyParser.json({}))
 
 app.use("/api/products", product_routes);
 
-// app.response.success = (data, message, code) => {
-//   app.response.send({
-//     code: code || 200,
-//     message,
-//     data,
-//   });
-// }
-
-// app.response.error = (data, message, code) => {
-//   app.response.send({
-//     code: code || 400,
-//     message,
-//     data,
-//   });
-// }
+//server 
 
 const start = async () => {
   try {
