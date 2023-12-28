@@ -22,17 +22,21 @@ const getAllProductsTesting = async (req, res, next) => {
 
 const getById = async (req, res, next) => {
   const id = req.params.id;
+  console.log()
   const product = await ProductModel.findOne({ _id: id });
-  res.status(200).json({ msg: product });
-  next();
+  return res.success("Delted Successfully", product);
 };
 
+const DeleteProduct = async (req, res, next) => {
+  const id = req.params.id;
 
+  const product = await ProductModel.deleteOne({ _id: id });
+  return res.success("Delted Successfully")
+};
 
-
-
-
-module.exports = { getById, CreateProduct, getAllProductsTesting };
-
-// JWT
-//
+module.exports = {
+  getById,
+  CreateProduct,
+  getAllProductsTesting,
+  DeleteProduct,
+};
